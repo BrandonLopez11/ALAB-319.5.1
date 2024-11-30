@@ -1,10 +1,11 @@
-# Node.js template
+# Grade Management API
 
-This is a Node.js project.
+This is a basic RESTful API for managing grades using Node.js, Express, and Mongoose. The API allows you to create, retrieve, update, and delete grade entries, as well as perform operations like adding or removing scores.
 
-Add your [configuration](https://codesandbox.io/docs/projects/learn/setting-up/tasks) to optimize it for [CodeSandbox](https://codesandbox.io/p/dashboard).
+## Features
 
-## Resources
-
-- [CodeSandbox — Docs](https://codesandbox.io/docs/projects)
-- [CodeSandbox — Discord](https://discord.gg/Ggarp3pX5H)
+* Create a new grade entry.
+* Retrieve grade data by ID, learner, or class.
+* Add or remove scores from a grade entry.
+* Update or delete grades by learner or class.
+* Backwards compatibility for student_id.
