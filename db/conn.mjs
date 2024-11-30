@@ -1,14 +1,15 @@
-import { MongoClient } from "mongodb";
+import mongoose from "mongoose";
+import dotenv from "dotenv";
 
-const client = new MongoClient(process.env.ATLAS_URI);
+dotenv.config(); 
 
-let conn;
-try {
-  conn = await client.connect();
-} catch (e) {
-  console.error(e);
-}
+const uri = process.env.ATLAS_URI;
 
-let db = conn.db("sample_training");
+mongoose
+  .connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log("Connected to MongoDB via Mongoose"))
+  .catch((err) => console.error("Error connecting to MongoDB", err));
 
-export default db;
+export default mongoose;
+
+// Tried a new way to connect no luck
